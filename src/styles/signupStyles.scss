@@ -1,0 +1,71 @@
+@use "global";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.signup {
+  @include global.pageContainer();
+
+  .PGLogo {
+    @include global.logoStyle();
+  }
+
+  form {
+    width: global.$formWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      height: global.$inputHeight;
+      padding: 10px;
+      font-size: global.$inputFontSize;
+    }
+
+    .usernameInput {
+      @include global.inputBorder();
+      width: global.$inputWidth;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .usernameInput:focus {
+      @include global.outlineStyle();
+    }
+
+    input {
+      width: global.$inputWidth;
+      @include global.inputBorder();
+      border: none;
+    }
+
+    input:focus {
+      @include global.outlineStyle();
+    }
+  }
+
+  button {
+    background: global.$secondaryColor;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    @include global.btnStyle();
+  }
+}
+
+span {
+  color: #eeeeee;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: global.$secondaryColor;
+  }
+}

@@ -1,0 +1,91 @@
+@use "global";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.login {
+  @include global.pageContainer();
+
+  .PGLogo {
+    @include global.logoStyle();
+  }
+
+  form {
+    width: global.$formWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      height: global.$inputHeight;
+      padding: 10px;
+      font-size: global.$inputFontSize;
+    }
+
+    .usernameInput {
+      @include global.inputBorder();
+      width: global.$inputWidth;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .usernameInput:focus {
+      @include global.outlineStyle();
+    }
+
+    .passwordContainer {
+      @include global.inputBorder();
+      width: global.$inputWidth;
+      display: flex;
+      background: #eeeeee;
+
+      input {
+        width: calc(#{global.$inputWidth} - #{global.$inputHeight});
+        @include global.inputBorder();
+        border: none;
+      }
+
+      button {
+        height: global.$inputHeight;
+        width: global.$inputHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        border: none;
+        background: #eeeeee;
+
+        svg {
+          height: global.$inputHeight;
+          width: global.$inputHeight;
+        }
+      }
+    }
+
+    .passwordContainer:focus-within {
+      @include global.outlineStyle();
+    }
+
+    button {
+      background: global.$secondaryColor;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+      @include global.btnStyle();
+    }
+  }
+
+  p {
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: global.$secondaryColor;
+    }
+  }
+}

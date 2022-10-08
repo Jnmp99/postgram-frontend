@@ -1,0 +1,15 @@
+@use "sideStyles";
+
+.rightSide {
+  @include sideStyles.sidesStyles;
+  max-width: 350px;
+  width: 350px;
+  height: fit-content;
+}
+
+
+@media only screen and (max-width: 1225px) {
+  .rightSide {
+    display: none;
+  }
+}

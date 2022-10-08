@@ -1,0 +1,33 @@
+@use "../global";
+
+body {
+  background-color: global.$primaryColor;
+}
+
+.App {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: center;
+
+  .contentContainer {
+    border-left: 1px solid global.$homeBordersColor;
+    border-right: 1px solid global.$homeBordersColor;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 1225px) {
+  .App {
+    margin-left: 0;
+
+    .contentContainer {
+      width: 100%;
+    }
+  }
+}
