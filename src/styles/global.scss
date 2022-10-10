@@ -40,16 +40,15 @@ $inputFontSize: 1.1rem;
 @mixin inputBorder {
   border: 1px solid black;
   border-radius: 5px;
-  margin: 2px 0 2px 0;
 }
 
 @mixin btnStyle {
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 2rem;
 }
 
 @mixin outlineStyle {
-  outline: 1px solid $secondaryColor;
+  outline: solid $secondaryColor;
 }
 
 @mixin pageContainer {
@@ -59,4 +58,8 @@ $inputFontSize: 1.1rem;
   justify-content: center;
   height: 100vh;
   padding-bottom: 20%;
+
+  h2 {
+    color: #eeeeee;
+  }
 }

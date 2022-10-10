@@ -20,52 +20,56 @@
     flex-direction: column;
     align-items: center;
 
-    input {
-      height: global.$inputHeight;
-      padding: 10px;
-      font-size: global.$inputFontSize;
-    }
+    .inputContainer {
+      width: 100%;
+      height: calc(#{global.$inputHeight} + 2rem);
 
-    .usernameInput {
-      @include global.inputBorder();
-      width: global.$inputWidth;
-    }
+      .signupLabel {
+        color: white;
+      }
 
-    input:focus {
-      outline: none;
-    }
+      input {
+        height: global.$inputHeight;
+        padding: 10px;
+        width: global.$inputWidth;
+        font-size: global.$inputFontSize;
+        @include global.inputBorder();
+        border: none;
+        margin-top: 2px;
+      }
 
-    .usernameInput:focus {
-      @include global.outlineStyle();
-    }
+      input:focus {
+        outline: none;
+        @include global.outlineStyle();
+      }
 
-    input {
-      width: global.$inputWidth;
-      @include global.inputBorder();
+      .signUpModal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 1.5rem;
+        span {
+          color: red;
+        }
+      }
+    }
+    button {
+      background: global.$secondaryColor;
+      color: white;
       border: none;
-    }
-
-    input:focus {
-      @include global.outlineStyle();
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+      @include global.btnStyle();
     }
   }
 
-  button {
-    background: global.$secondaryColor;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: bold;
-    @include global.btnStyle();
-  }
-}
-
-span {
-  color: #eeeeee;
-  a {
-    text-decoration: none;
-    cursor: pointer;
-    color: global.$secondaryColor;
+  span {
+    color: #eeeeee;
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: global.$secondaryColor;
+    }
   }
 }
