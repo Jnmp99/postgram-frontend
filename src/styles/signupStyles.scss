@@ -43,15 +43,7 @@
         @include global.outlineStyle();
       }
 
-      .signUpModal {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 1.5rem;
-        span {
-          color: red;
-        }
-      }
+      @include global.modal();
     }
     button {
       background: global.$secondaryColor;
@@ -61,6 +53,7 @@
       padding: 10px;
       font-weight: bold;
       @include global.btnStyle();
+      margin-top: 2rem;
     }
   }
 

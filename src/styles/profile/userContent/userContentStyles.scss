@@ -1,0 +1,46 @@
+@use "../../global";
+
+.userContentContainer {
+
+  .userProfileHeader{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    background: global.$primaryColor;
+    
+    .fullHeaderContainer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px 10px 5px 5px;
+      background: global.$primaryColor;
+    }
+
+    nav {
+      border-bottom: 1px solid global.$logoColor;
+      border-top: 1px solid global.$logoColor;
+      ul {
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+        transition: .2s all;
+
+        li {
+          list-style-type: none;
+          height: 100%;
+          padding: 20px;
+          font-weight: bold;
+          color: global.$secondaryColor;
+          cursor: pointer;
+        }
+
+        .active {
+          color: global.$logoColor;
+          border-bottom: 2px solid global.$logoColor;
+          padding-bottom: 15px;
+          background-color: #220000;
+        }
+      }
+    }
+  }
+}

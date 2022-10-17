@@ -3,12 +3,14 @@ import PostsContainer from "./posts/PostsContainer";
 import LoginOrSignup from "./login-or-signup/login-or-signup";
 
 const Content = () => {
-  const isUserLogged = false;
+  const isUserLogged = true;
 
   return (
     <article className="contentContainer">
       <CreatePost />
-      <PostsContainer />
+      <div className="homePostContainer">
+        <PostsContainer jwt={false} />
+      </div>
       {!isUserLogged && <LoginOrSignup />}
     </article>
   );

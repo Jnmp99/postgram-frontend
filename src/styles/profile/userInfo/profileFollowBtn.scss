@@ -1,0 +1,16 @@
+@use "../../global";
+
+.followBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: none;
+    color: white;
+    background-color: global.$logoColor;
+    border-radius: 6px;
+  }
+}

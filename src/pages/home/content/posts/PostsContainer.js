@@ -1,10 +1,11 @@
 import Post from "./Post";
 import "../../../../styles/home/postsContainer.scss";
 
-const PostsContainer = () => {
+const PostsContainer = (props) => {
+  const { jwt, user } = props;
   return (
     <div className="postsContainer">
-      <Post />
+      <Post jwt={jwt} user={user} />
     </div>
   );
 };

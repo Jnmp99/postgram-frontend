@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5px;
 
     input {
       height: global.$inputHeight;
@@ -27,6 +28,7 @@
     .usernameInput {
       @include global.inputBorder();
       width: global.$inputWidth;
+      margin-bottom: 5px;
     }
 
     input:focus {
@@ -42,7 +44,7 @@
       width: global.$inputWidth;
       display: flex;
       background: #eeeeee;
-
+      margin-bottom: 5px;
       input {
         width: calc(#{global.$inputWidth} - #{global.$inputHeight});
         @include global.inputBorder();

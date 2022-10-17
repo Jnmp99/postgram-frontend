@@ -13,15 +13,24 @@ const CreatePost = () => {
   const text = useRef(null);
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const focus = () => {
+    if (text.current == null) {
+      return;
+    }
+    if (
+      text.current !== document.activeElement &&
+      text.current.innerHTML === ""
+    ) {
+      dispatch({ isOnFocus: false });
+    }
+  };
+
   useEffect(() => {
-    document.body.addEventListener("click", () => {
-      if (
-        text.current !== document.activeElement &&
-        text.current.innerHTML === ""
-      ) {
-        dispatch({ isOnFocus: false });
-      }
-    });
+    document.body.addEventListener("click", focus);
+
+    return () => {
+      document.body.removeEventListener("click", focus);
+    };
   }, []);
 
   return (

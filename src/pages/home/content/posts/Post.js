@@ -1,13 +1,15 @@
 import "../../../../styles/home/postsStyles.scss";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const posts = [
+const p = [
   {
-    id: "asdfasdf",
-    user: "Cat",
-    userName: "TheRealCat",
+    id: "gaed",
+    user: "Dog",
+    userName: "TheRealDog",
     userUrl: ".",
     profile:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+      "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg",
     post: "Water, water everywhere, nor any drop to drink",
     postedAt: "2022/10/05",
     postedTime: "22:00"
@@ -28,8 +30,8 @@ const posts = [
   },
   {
     id: "fasdabf",
-    user: "Cat",
-    userName: "TheRealCat",
+    user: "Dog",
+    userName: "TheRealDog",
     userUrl: ".",
     profile:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
@@ -54,7 +56,23 @@ const posts = [
   }
 ];
 
-const Post = () => {
+const Post = (props) => {
+  const [posts, setPosts] = useState([]);
+  const { jwt, user } = props;
+
+  useEffect(() => {
+    if (jwt === false) {
+      setPosts(p);
+      return;
+    }
+
+    setPosts(() => {
+      return p.filter((e) => {
+        return e.userName === user;
+      });
+    });
+  }, [jwt, user]);
+
   return (
     <>
       {posts.map((element) => {
@@ -62,7 +80,6 @@ const Post = () => {
           id,
           user,
           userName,
-          userUrl,
           profile,
           post,
           postedAt,
@@ -72,29 +89,25 @@ const Post = () => {
         return (
           <section key={id} className="post">
             <div className="postImgContentContainer">
-              <div className="postImgContainer">
+              <Link to={`/${userName}`} className="postImgContainer">
                 <img alt={`${userName} Profile`} src={profile}></img>
-              </div>
+              </Link>
             </div>
             <div className="postContentContainer">
               <div className="postUserInfoContainer">
-                <a href={userUrl}>
+                <Link to={`/${userName}`}>
                   <span className="postUser">{user}</span>
-                </a>
-                <a href={userUrl}>
+                </Link>
+                <Link to={`/${userName}`}>
                   <span className="postUserName">{`@${userName}`}</span>
-                </a>
+                </Link>
               </div>
               <div className="postInfoContainer">
                 <div className="postContent">
                   <p>{post}</p>
                   {img && (
-                    <div>
-                      <img
-                        className="postImgContainer"
-                        src={img}
-                        alt="post"
-                      ></img>
+                    <div className="postImgContainer">
+                      <img src={img} alt="post"></img>
                     </div>
                   )}
                 </div>

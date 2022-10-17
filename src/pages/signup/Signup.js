@@ -53,8 +53,6 @@ const Signup = () => {
     setIsError(isError);
   };
 
-  console.log(isError);
-
   return (
     <>
       <div className="signup">
