@@ -1,0 +1,76 @@
+$primaryColor: black;
+$primaryPostColorHover: #181818;
+$primaryColorHover: hsl(220, 11%, 31%);
+$secondaryColor: hsl(339, 80%, 51%);
+$activeColor: hsl(252, 41%, 21%);
+$logoColor: #fe2233;
+$homeBordersColor: #fe2233;
+$postFontColor: rgb(231, 233, 234);
+
+$formWidth: 500px;
+$inputWidth: 100%;
+$inputHeight: 3rem;
+$inputFontSize: 1.1rem;
+
+// $BgColor: #434852;
+// secondaryBgColor
+// hsl(220, 10%, 29%)
+
+@mixin logoStyle {
+  font-family: "Patua One", cursive;
+  color: $logoColor;
+  font-size: 4rem;
+}
+
+@mixin textInsertIcons {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid gray;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin inputBorder {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@mixin modal {
+  .signUpModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1.5rem;
+    span {
+      color: red;
+    }
+  }
+}
+
+@mixin btnStyle {
+  cursor: pointer;
+}
+
+@mixin outlineStyle {
+  outline: solid $secondaryColor;
+}
+
+@mixin pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h2 {
+    color: #eeeeee;
+  }
+}

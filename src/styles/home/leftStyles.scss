@@ -1,0 +1,19 @@
+@use "sideStyles";
+@use "../global";
+
+.leftSide {
+  @include sideStyles.sidesStyles;
+  width: 275px;
+  border-right: 1px solid global.$homeBordersColor;
+
+  .typedLogo {
+    @include global.logoStyle();
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1225px) {
+  .leftSide {
+    display: none;
+  }
+}

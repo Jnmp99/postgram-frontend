@@ -1,0 +1,28 @@
+@use "../../global";
+
+.profileCoverImg {
+  width: 100%;
+  background-color: global.$primaryColor;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .profileBackBtnContainer {
+    position: fixed;
+    top: 0;
+    width: fit-content;
+    height: fit-content;
+    z-index: 2;
+
+    svg {
+      fill: global.$logoColor;
+    }
+  }
+}

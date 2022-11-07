@@ -1,0 +1,24 @@
+@use "../../global";
+
+.followBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .fBtn {
+    background-color: global.$logoColor;
+  }
+
+  .editBtn {
+    background: gray;
+  }
+}
